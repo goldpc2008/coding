@@ -7,9 +7,9 @@ import nmap
 def nmapScan( tgHost, tgPort ):
     nmScan = nmap.PortScanner()
     results = nmScan.scan( tgHost, tgPort )
-    state = results['scan'][tgHost]['tcp']
-    for k in state :
-        print("[*]"+tgHost+"tcp/"+str(k)+" "+state[k]['state'])
+    stateResult = results['scan'][tgHost]['tcp']
+    for k in stateResult :
+        print("[*]"+tgHost+"tcp/"+str(k)+" "+stateResult[k]['state'])
 
 #主函数
 def main() :
